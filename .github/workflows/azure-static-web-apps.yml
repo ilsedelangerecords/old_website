@@ -23,5 +23,5 @@ jobs:
       - name: Deploy via rsync
         run: |
           rsync -avz --delete -e "ssh -i ~/.ssh/id_ed25519 -p ${{ secrets.SSH_PORT }}" \
-            public/ \
+            / \
             ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.SSH_TARGET_PATH }}
